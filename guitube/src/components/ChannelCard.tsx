@@ -1,9 +1,15 @@
 import React from "react";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { CheckCircle } from "@mui/icons-material";
 
-const ChannelCard = ({ channel }: { channel: any }) => {
+const ChannelCard = ({
+  channel,
+  marginTop,
+}: {
+  channel: any;
+  marginTop?: string;
+}) => {
   return (
     <Box
       sx={{
@@ -14,6 +20,7 @@ const ChannelCard = ({ channel }: { channel: any }) => {
         width: { xs: "356px", md: "320px" },
         height: "326px",
         margin: "auto",
+        marginTop,
       }}
     >
       <Link
@@ -48,7 +55,8 @@ const ChannelCard = ({ channel }: { channel: any }) => {
           </Typography>
           {channel?.statistics?.subscriberCount && (
             <Typography variant="subtitle2" fontWeight="bold" color="gray">
-              {channel?.statistics?.subscriberCount} inscritos
+              {parseInt(channel?.statistics?.subscriberCount).toLocaleString()}{" "}
+              inscritos
             </Typography>
           )}
         </CardContent>
