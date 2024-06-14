@@ -24,7 +24,7 @@ const ChannelCard = ({
       }}
     >
       <Link
-        to={`channel/${channel?.id?.channelId}`}
+        to={`/channel/${channel?.id?.channelId}`}
         style={{ alignItems: "center", justifyContent: "center" }}
       >
         <CardContent
